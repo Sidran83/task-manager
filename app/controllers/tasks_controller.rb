@@ -3,6 +3,7 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
-  def about
+  def show
+    @task = Task.find(params[:id])
   end
 end
