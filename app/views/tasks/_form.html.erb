@@ -1,5 +1,21 @@
-<%= simple_form_for_(task) do |f| %>
-  <%= f.input :title  %>
-  <%= f.input :details  %>
-  <%= f.submit %>
+<%= simple_form_for (task) do |f| %>
+  <div class="form-group">
+    <%= f.input :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :details, class: 'form-control' %>
+  </div>
+
+  <% unless f.object.new_record? %>
+    <div class="checkbox">
+      <label>
+        <%= f.check_box :completed %> Completed
+      </label>
+    </div>
+  <% end %>
+
+  <%= f.submit class: 'btn btn-primary' %>
 <% end %>
+
+
